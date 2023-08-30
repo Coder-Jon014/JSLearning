@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+        <p class="label">Dark</p>
+        <div class="switch" id="switch">
+            <div class="handle" id="handle"></div>
+        </div>
+        <p class="label">Light</p>
+    </div>
+    <script>
+        const switchBtn = document.getElementById('switch')
+        const handleBtn = document.getElementById('handle')
+        let switchState = false
+
+        switchBtn.addEventListener('click', toggleMode)
+
+        function toggleMode(){
+            if(!switchState){
+               document.documentElement.style.setProperty('--background-color', 'white') 
+               document.documentElement.style.setProperty('--text-color', 'black') 
+               handleBtn.classList.add('move-right')
+               switchState = true
+            }
+            else{
+                document.documentElement.style.setProperty('--background-color', '#232323') 
+                document.documentElement.style.setProperty('--text-color', 'white') 
+                handleBtn.classList.remove('move-right')
+                switchState = false
+            }
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="container">
+    <button>
+      <span>Services (Click me)</span>
+      <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.4601 0.191925H0.212692L5.51162 5.49231L10.4601 0.191925Z" fill="white"/>
+      </svg>
+    </button>
+  
+    <div class="mask">
+      <ul id="menu">
+        <li><a href="#">Tire replacement</a></li>
+        <li><a href="#">Oil change</a></li>
+        <li><a href="#">Brakes</a></li>
+        <li><a href="#">Mufflers</a></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    const serviceBtn = document.querySelector('button')
+    const svgIcon = document.querySelector('svg')
+    const secondaryMenu = document.getElementById('menu')
+    let menuStatus = false; // true is shown, false is hidden
+    let checkMenu
+    /* 
+    Add an event listener of click to serviceBtn, and 
+    pass in the menu function in the second parameter: 
+    */
+    serviceBtn.addEventListener('click', menu)
+
+    function menu() {
+    if (!menuStatus) {
+        // Add the class "reveal-menu" to secondaryMenu:
+        secondaryMenu.classList.add('reveal-menu')
+
+        // Add the class "rotate-icon" to svgIcon:
+        svgIcon.classList.add('rotate-icon')
+        menuStatus = true;
+    } else {
+        secondaryMenu.classList.remove('reveal-menu')
+        svgIcon.classList.remove('rotate-icon')
+        menuStatus = false;
+    }
+    checkMenu = 1; //ignore this, for our system
+    }
+  </script>
+</body>
+</html>
+
+
